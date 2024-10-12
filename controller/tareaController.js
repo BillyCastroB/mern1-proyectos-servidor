@@ -34,7 +34,7 @@ export const crearTarea = async (req, res)=>{
 
 export const obtenerTareas = async (req, res)=>{
     try{
-        const { proyecto } = req.body;
+        const { proyecto } = req.query;
         const existeProyecto = await Proyecto.findById(proyecto);
         if(!existeProyecto){
             return res.status(404).json({ msg: 'Proyecto no autorizado' })
