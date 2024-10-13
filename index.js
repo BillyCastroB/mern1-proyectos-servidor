@@ -9,7 +9,7 @@ import cors from 'cors';
 
 const app = express();
 
-const PORT = process.env.PORT || 4000;
+const port = process.env.port || 4000;
 ConectarDb();
 app.use(cors());
 app.get('/' ,(req, res)=>{
@@ -23,8 +23,8 @@ app.use('/api/auth', auth)
 app.use('/api/proyectos', proyectos)
 app.use('/api/tareas', tareas)
 
-app.listen(PORT, ()=>{
-    console.log(`el servidor esta corriendo en el puerto ${PORT}`);
+app.listen(port, ()=>{
+    console.log(`el servidor esta corriendo en el puerto ${port}`);
 });
 
 
