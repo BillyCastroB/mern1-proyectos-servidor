@@ -4,7 +4,6 @@ import authMiddleware from "../middleware/auth.js";
 import { check } from "express-validator";
 import { actualizarTarea, crearTarea, eliminarTarea, obtenerTareas } from "../controller/tareaController.js";
 
-
 router.post('/',
     authMiddleware,
     [

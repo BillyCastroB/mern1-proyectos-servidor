@@ -73,12 +73,10 @@ export const actualizarTarea = async (req, res)=>{
      
         // const nueva Tarea
         const nuevaTarea = {}
-        if(nombre){
-            nuevaTarea.nombre = nombre
-        }
-        if(estado){
-            nuevaTarea.estado = estado
-        }
+
+            nuevaTarea.nombre = nombre;
+            nuevaTarea.estado = estado;
+
 
         tarea = await Tarea.findOneAndUpdate({_id: req.params.id}, nuevaTarea, {new: true} );
         res.json({tarea})
@@ -92,7 +90,7 @@ export const eliminarTarea = async (req, res)=>{
 
     try{
 
-        const { proyecto } = req.body;
+        const { proyecto } = req.query;
         // tarea existe
         let tarea = Tarea.findById(req.params.id);
         if(!tarea){
